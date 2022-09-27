@@ -12,9 +12,13 @@
     color: rgb(197, 197, 6);
 }
 .container p{
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
-    color: #cccc;
+    text-align: center;
+    color: #fff;
+}
+span{
+    color: rgb(197, 197, 6) ;
 }
 .container img{
     width: 100px;
@@ -58,4 +62,9 @@
     text-decoration: none;
     margin: 12px 0;
     font-size: 14px;
+}
+
+label{
+    color: #fff;
+    font-size: 16px;
 }

@@ -85,6 +85,7 @@ function Admin() {
     }).then(()=>{
       setTarefas('')
       setEditar({})
+      toast.success('Tarefa editada')
     }).catch((error)=>{
       console.log('Error' + error)
       setTarefas('')
