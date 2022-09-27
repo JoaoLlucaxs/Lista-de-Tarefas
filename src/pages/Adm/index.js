@@ -9,6 +9,7 @@ orderBy,
 where,
 doc,deleteDoc
 ,updateDoc} from 'firebase/firestore'
+import {toast} from 'react-toastify'
 
 
 function Admin() {
@@ -49,7 +50,7 @@ function Admin() {
     e.preventDefault()
 
     if(tarefa === ''){
-      alert('Digite a sua tarefa')
+      toast.error('Digite o campo')
       return
     }
     if(editar?.id){
@@ -61,7 +62,7 @@ function Admin() {
       created:new Date(),
       userUid:user?.uid
     }).then(()=>{
-      alert('Tarefa registrada com sucesso!')
+     toast.success('Tarefa registrada')
       setTarefas('')
     }).catch((error)=>{
       console.log("Erro ao registrar" + error)
@@ -95,7 +96,7 @@ function Admin() {
     const docRef=doc(db,"tarefas",id)
     await deleteDoc(docRef)
     .then(()=>{
-      alert('Tarefa Concluida com sucesso!')
+      toast.success('Tarefa Concluida com sucesso!')
     }).catch((error)=>{
       console.error(error)
     })
@@ -105,7 +106,7 @@ function Admin() {
     const deleteRef=doc(db,"tarefas",id)
     await deleteDoc(deleteRef)
     .then(()=>{
-      alert('Tarefa Deletada!')
+      toast.success('Tarefa Deletada!')
     }).catch((error)=>{
       console.error(error)
     })
